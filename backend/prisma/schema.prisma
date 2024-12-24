@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  country            String
+  image              String
+  pricePerTon        Float
+  offeredVolume      Int
+  distributionWeight Float
+  supplierName       String
+  earliestDelivery   DateTime
+  description        String
+
+  @@index([distributionWeight], name: "idx_distribution_weight")
+  @@index([offeredVolume], name: "idx_offered_volume")
+  @@index([pricePerTon], name: "idx_price_per_ton")
+
+}
+
