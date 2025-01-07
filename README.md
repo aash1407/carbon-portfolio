@@ -20,7 +20,7 @@ git clone https://github.com/aash1407/carbon-portfolio.git
 cd backend
 ```
 
-#### Rename `env_template` to `.env`
+#### Rename `env_template` in the backend folder to `.env`
 
 #### Spin Up the Postgres Instance:
 
@@ -44,6 +44,8 @@ npx prisma migrate dev --name init
 npx ts-node prisma/import-csv.ts
 ```
 
+Once this step is done, a migrations sub-folder should be generated inside the prisma folder.
+
 #### Install Backend Dependencies:
 
 ```bash
@@ -58,12 +60,16 @@ npm run start:dev
 
 ### 3. Set Up the Frontend
 
+#### Open a new terminal
+
 #### Navigate to the Frontend Directory:
 
 ```bash
 cd ..
 cd frontend
 ```
+
+### Rename `env_template` inside the frontend folder to `.env`
 
 #### Install Frontend Dependencies:
 

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Project } from "../types/project.types";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL =
+  import.meta.env.VITE_BACKEND_API_URL || "http://localhost:3000";
 
 // Add a new project
 export const addProject = async (projectData: Project) => {
