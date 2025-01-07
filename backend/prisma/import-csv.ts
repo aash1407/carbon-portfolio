@@ -1,3 +1,17 @@
+/**
+ * This script imports project data from a CSV file into a database using Prisma.
+ *
+ * - Reads data from a CSV file (`projects_sample.csv`) located in the same directory as the script.
+ * - Parses the CSV data into an array of project objects with properties matching the database schema.
+ * - Uses Prisma to insert the parsed data into the `Project` table of the database.
+ * - Skips duplicate records in the database to avoid re-insertion of the same data.
+ * - Ensures proper disconnection from the database after the import process is complete.
+ *
+ * Requirements:
+ * - The CSV file should have headers matching the expected field names.
+ * - Prisma Client must be properly configured to connect to the database.
+ */
+
 import { PrismaClient } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
